@@ -18,7 +18,7 @@ type flag struct {
 func NewParser(flags ...string) (parser *Argparser) {
 	// Add empty string acting as positional arguments flag
 	flags = append([]string{""}, flags...)
-	parser = Argparser{
+	parser = &Argparser{
 		flags: make(map[string]*flag, 0),
 	}
 	for _, flagName := range flags {
