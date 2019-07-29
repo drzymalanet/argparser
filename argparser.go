@@ -15,7 +15,7 @@ type flag struct {
 }
 
 // NewParser creates an argument parser with given flags
-func NewParser(flags ...string) (parser Argparser) {
+func NewParser(flags ...string) (parser *Argparser) {
 	// Add empty string acting as positional arguments flag
 	flags = append([]string{""}, flags...)
 	parser = Argparser{
@@ -31,7 +31,7 @@ func NewParser(flags ...string) (parser Argparser) {
 }
 
 // Parse maps the arguments to switches
-func (parser *Argparser) Parse(args []string) {
+func (parser *Argparser) Parse(args []string) *Argparser {
 	// start with appending to positional args list
 	prev := parser.flags[""]
 	for _, argument := range args {
@@ -44,6 +44,7 @@ func (parser *Argparser) Parse(args []string) {
 		prev.vals = append(prev.vals, argument)
 		prev.found = true
 	}
+	return parser
 }
 
 // Get returns the combined list of arguments for the given flags.
