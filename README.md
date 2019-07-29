@@ -32,6 +32,11 @@ And then
 		}
 	}
 
+Result:
+
+    $ app --version
+    2019/07/29 19:27:04 Add version number here
+
 ### Allows for multi-value switches
 
 To retrieve arguments such as in: `app --input a b c --output d e f`
@@ -45,6 +50,16 @@ To retrieve arguments such as in: `app --input a b c --output d e f`
 			log.Printf("Got output file: %s", f)
 		}
 	}
+
+Result:
+
+    $ app --input 1 2 3 --output a b c
+    2019/07/29 19:28:37 Got input file: 1
+    2019/07/29 19:28:37 Got input file: 2
+    2019/07/29 19:28:37 Got input file: 3
+    2019/07/29 19:28:37 Got output file: a
+    2019/07/29 19:28:37 Got output file: b
+    2019/07/29 19:28:37 Got output file: c
 
 ### Works well in complex circumstances
 
