@@ -1,7 +1,7 @@
 # argparser
 This package allows for collecting more than one value for flag arguments. The standard `flags` package does not provide such capability.
 
-## Instalation
+## Installation
 
     go get github.com/drzymalanet/argparser
 
@@ -9,7 +9,7 @@ And then
 
     import "github.com/drzymalanet/argparser"
 
-## Instruction manual
+## Quick manual
 
 1. Create parser with `NewParser(...)`,
 2. Parse the input arguments with `Parse(...)`,
